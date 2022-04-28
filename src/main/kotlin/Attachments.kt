@@ -1,3 +1,1 @@
-interface Attachments {
-    val type: String
-}
+sealed class Attachments(val type: String)

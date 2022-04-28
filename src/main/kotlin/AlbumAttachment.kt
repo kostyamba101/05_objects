@@ -1,4 +1,1 @@
-class AlbumAttachment: Attachments {
-    override val type: String = "album"
-    val album: Album = Album()
-}
+data class AlbumAttachment (val album: Album) : Attachments("album")
