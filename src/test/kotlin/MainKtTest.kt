@@ -7,7 +7,7 @@ class MainKtTest {
     @Test
     fun add() {
         val post = Post(id = 1)
-        val expected = 4
+        val expected = 1
         WallService.add(post)
         val result = WallService.add(post).id
 
