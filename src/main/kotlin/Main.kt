@@ -4,15 +4,8 @@ fun main(args: Array<String>) {
     WallService.add(post1)
     WallService.update(post2)
 
-    val attachment1: Attachments = VideoAttachment(Video(1,"video"))
-    val attachment2: Attachments = AudioAttachment(Audio(1,"Skrillex"))
-    val attachment3: Attachments = AlbumAttachment(Album(1,"Album"))
-    val attachment4: Attachments = GraffitiAttachment(Graffiti(1,"http://graffiti.ru"))
-    val attachment5: Attachments = PhotoAttachment(Photo(1,1))
+    val comments = Comments(10, "коммент к посту")
 
-    println(attachment1.type)
-    println(attachment2.type)
-    println(attachment3.type)
-    println(attachment4.type)
-    println(attachment5.type)
+    WallService.createComment(comments, 0)
+    println(comments.text)
 }

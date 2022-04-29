@@ -36,4 +36,24 @@ class MainKtTest {
 
         assertFalse(result)
     }
+
+    @Test
+    fun shouldAddComment() {
+        val post = Post(0)
+        val comment1 = Comments(1,"test message")
+        val expected = "test message"
+
+        WallService.add(post)
+        WallService.createComment(comment1, 1)
+
+        val result = comment1.text
+
+        assertEquals(expected, result)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val comments2 = Comments(2, "test message 2")
+        WallService.createComment(comments2, 5)
+    }
 }
